@@ -20,11 +20,26 @@
         }
       }]);
     </script>
+
+    <script>
+        var rootUrl = 'http://tdccyrus.github.io';
+        var resources = {
+          jsonData: 'data.js'
+        };
+        var request = new XMLHttpRequest();
+        request.addEventListener('load', function() {
+          var jsonData = JSON.parse(request.responseText);
+          document.getElementById('output').innerHTML += '<br>' + jsonData.data;
+        });
+        request.open('GET', rootUrl + resources.jsonData, true);
+        request.send();
+    </script>
   </head>
   <body>
     powered by onesignal<br/>
     the subscription will send you notification every 2 hours.<br>
     <br>
     <a href="http://tdccyrus.github.io/page1.htm">this is a HTTP link</a><br>
+    <div id="output"></div>
   </body>
 </html>
