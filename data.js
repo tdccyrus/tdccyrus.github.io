@@ -1,3 +1,3 @@
 {
-   data: "hello world"
+   "data": "hello world"
 }
